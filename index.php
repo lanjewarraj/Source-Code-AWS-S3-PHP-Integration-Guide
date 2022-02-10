@@ -7,15 +7,15 @@ $s3Client = new S3Client([
         'profile' => 'default',
         'version' => 'latest',
         'region' => 'us-east-2',
-        //Below I provide hard coded credentials(not recomended), see best practice for providing credentials to your application https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials_hardcoded.html
+        //Below I provided hard coded credentials(not recomended), see best practice for providing credentials to your application https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials_hardcoded.html
         'credentials' => [
-            'key'    => 'put-your-access-key-id',
-            'secret' => 'put-your-secret-access-key',
+            'key'    => 'put-your-aws-access-key-id',
+            'secret' => 'put-your-aws-secret-access-key',
             ],
         ]);
         
     $result = $s3Client->listObjects([
-        'Bucket' => 'put-your-created-bucket-name',
+        'Bucket' => 'put-your-aws-s3-bucket-name',
         'Key' => 'key'
     ]);
 
@@ -62,10 +62,10 @@ $s3Client = new S3Client([
 <tr>
 <?php foreach ($result['Contents'] as $object): ?>
  <tr>
-    <td><a href="<?php echo $s3->getObjectUrl('put-your-s3-bucket-name', $object['Key']); ?>" download="<?php echo $object['Key']; ?>">Download</a></td>
+    <td><a href="<?php echo $s3->getObjectUrl('put-your-aws-s3-bucket-name', $object['Key']); ?>" download="<?php echo $object['Key']; ?>">Download</a></td>
  </tr>
  <?php endforeach; ?>
 </table>
 
 
-<!-- 4. Delete content of s3 bucket refer delete_s3_object.php -->
+<!-- 4. Delete content of AWS S3 bucket refer delete_s3_object.php -->
