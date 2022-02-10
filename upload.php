@@ -13,7 +13,7 @@ require('config.php');
  move_uploaded_file($tmpName, $tmp_file_path);
  try{
  $s3->putObject([
- 'Bucket' => 'put-your-created-bucket-name',
+ 'Bucket' => 'put-your-aws-s3-bucket-name',
  'Key' => "uploads/{$name}",
   ]);
  //remove the file from local folder
