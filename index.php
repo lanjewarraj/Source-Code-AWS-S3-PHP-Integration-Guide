@@ -6,7 +6,7 @@ use Aws\Exception\AwsException;
 $s3Client = new S3Client([
         'profile' => 'default',
         'version' => 'latest',
-        'region' => 'us-east-2',
+        'region' => 'put-your-aws-s3-region/endpoint', //see the complete region/enfpoint list :-> https://docs.aws.amazon.com/general/latest/gr/s3.html
         //Below I provided hard coded credentials(not recomended), see best practice for providing credentials to your application https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials_hardcoded.html
         'credentials' => [
             'key'    => 'put-your-aws-access-key-id',
