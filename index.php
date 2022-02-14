@@ -67,5 +67,8 @@ $s3Client = new S3Client([
  <?php endforeach; ?>
 </table>
 
+</body>
+</html>
+
 
 <!-- 4. Delete content of AWS S3 bucket refer delete_s3_object.php -->
